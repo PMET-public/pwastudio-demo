@@ -1,5 +1,6 @@
 import { skipWaiting, clientsClaim } from 'workbox-core';
 import { precacheAndRoute } from 'workbox-precaching';
+import { OFFLINE_PAGE } from './defaults';
 
 export default function() {
     /**
@@ -39,5 +40,7 @@ export default function() {
      */
     const precacheAssets = self.__WB_MANIFEST;
 
-    precacheAndRoute(precacheAssets || []);
+    precacheAndRoute(
+        [{ url: OFFLINE_PAGE, revision: Date.now() }, ...precacheAssets] || []
+    );
 }
