@@ -1,4 +1,4 @@
-#!/bin/bash
+# !/bin/bash
 
 read -r -d '' applescriptCode <<'EOF'
    set magento_url to text returned of (display dialog "🔌  What's your Magento Cloud Environment URL?" default answer "https://venia.magento.com")
@@ -13,6 +13,3 @@ else
   echo "⚠️ You need a Magento URL to build a PWA."
   return
 fi
-
-
-

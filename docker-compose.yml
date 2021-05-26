@@ -1,7 +1,9 @@
 version: '3.0'
 services:
-  pwastudio-demo:
+  pwastudio:
     build:
       context: .
+      args:
+        - MAGENTO_BACKEND_URL=${MAGENTO_BACKEND_URL:-https://venia.magento.com}
     ports:
-      - '3000:3000'
+      - 3000:3000
